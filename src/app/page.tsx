@@ -22,13 +22,13 @@ export default function Home() {
     <>
       <HeroSection />
 
-      {/* Highlights */}
+      {/* 亮点 */}
       <section className="mx-auto max-w-4xl px-6 py-20">
         <h2 className="text-2xl font-semibold tracking-tight mb-10 text-center">
-          Highlights
+          亮点
         </h2>
         <div className="grid gap-5 sm:grid-cols-3">
-          {profile.highlights.map((h, i) => (
+          {profile.highlights.map((h) => (
             <Card
               key={h.title}
               className="border-border/60 hover:shadow-md transition-all hover:-translate-y-0.5"
@@ -49,11 +49,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Selected Projects */}
+      {/* 精选项目 */}
       <section className="bg-muted/40">
         <div className="mx-auto max-w-4xl px-6 py-20">
           <h2 className="text-2xl font-semibold tracking-tight mb-10 text-center">
-            Selected Projects
+            精选项目
           </h2>
           <div className="grid gap-5 sm:grid-cols-2">
             {featuredProjects.map((project, i) => (
@@ -67,10 +67,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Tech Stack */}
+      {/* 技术栈 */}
       <section className="mx-auto max-w-4xl px-6 py-20">
         <h2 className="text-2xl font-semibold tracking-tight mb-10 text-center">
-          Tech Stack
+          技术栈
         </h2>
         <div className="grid gap-8 sm:grid-cols-2">
           {skillCategories.map((cat) => (

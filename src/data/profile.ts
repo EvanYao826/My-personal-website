@@ -1,34 +1,34 @@
 export const profile = {
   name: "姚昆鹏",
   nameEn: "Evan Yao",
-  title: "Java Backend Engineer",
-  subtitle: "AI Application Developer",
+  title: "Java 后端工程师",
+  subtitle: "AI 应用开发者",
   university: "辽宁科技大学",
   major: "软件工程",
   grade: "大三",
   avatar: "/avatar.jpg",
   domain: "evanyao826324.vercel.app",
-  bio: `My primary programming language is Java, and my long-term interests lie in backend architecture, AI applications, and Agent systems. Recently, I designed a five-layer Agent orchestration architecture covering workflow scheduling, tool integration, memory management, context routing, and response streaming, reducing SSE first-byte latency by nearly 90%.
+  bio: `我的主要编程语言是 Java，长期关注后端架构、AI 应用和 Agent 系统。近期设计了一套五层 Agent 编排架构，涵盖工作流调度、工具集成、记忆管理、上下文路由和响应流式传输，将 SSE 首字节延迟降低了近 90%。
 
-I'm working toward becoming an AI full-stack engineer and independent developer who builds practical products with elegant, maintainable code. Beyond engineering, I enjoy contributing to open-source communities and sharing technical insights through writing.`,
+我正在努力成为一名 AI 全栈工程师和独立开发者，致力于用优雅、可维护的代码构建实用的产品。在工程之外，我喜欢参与开源社区，并通过写作分享技术见解。`,
   highlights: [
     {
       icon: "brain",
-      title: "Agent Architecture",
+      title: "Agent 架构",
       description:
-        "Designed five-layer Agent orchestration architecture, reducing SSE first-byte latency by ~90%",
+        "设计五层 Agent 编排架构，将 SSE 首字节延迟降低约 90%",
     },
     {
       icon: "git-branch",
-      title: "Open Source",
+      title: "开源贡献",
       description:
-        "Active contributor to Dify and LangChain4j open-source projects",
+        "Dify 和 LangChain4j 开源项目的活跃贡献者",
     },
     {
       icon: "pen-line",
-      title: "Technical Writing",
+      title: "技术写作",
       description:
-        "100+ articles on CSDN with 100,000+ total views",
+        "在 CSDN 发表 100+ 篇文章，总阅读量超过 10 万",
     },
   ],
   social: {

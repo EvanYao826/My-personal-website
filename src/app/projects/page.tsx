@@ -11,9 +11,9 @@ export default function Projects() {
   return (
     <div className="mx-auto max-w-4xl px-6 py-16">
       <div className="text-center mb-12">
-        <h1 className="text-2xl font-bold tracking-tight mb-2">Projects</h1>
+        <h1 className="text-2xl font-bold tracking-tight mb-2">项目</h1>
         <p className="text-muted-foreground">
-          A selection of projects I&apos;ve worked on.
+          我参与开发的一些项目展示。
         </p>
       </div>
 

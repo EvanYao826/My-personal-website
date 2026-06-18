@@ -1,0 +1,123 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - link "Evan Yao" [ref=e4] [cursor=pointer]:
+        - /url: /
+      - list [ref=e5]:
+        - listitem [ref=e6]:
+          - link "Home" [ref=e7] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=e8]:
+          - link "About" [ref=e9] [cursor=pointer]:
+            - /url: /about
+        - listitem [ref=e10]:
+          - link "Projects" [ref=e11] [cursor=pointer]:
+            - /url: /projects
+        - listitem [ref=e12]:
+          - link "Contact" [ref=e13] [cursor=pointer]:
+            - /url: /contact
+  - main [ref=e14]:
+    - generic [ref=e16]:
+      - generic [ref=e19]: E
+      - generic [ref=e20]:
+        - heading "姚昆鹏" [level=1] [ref=e21]
+        - paragraph [ref=e22]: Evan Yao
+      - generic [ref=e23]:
+        - paragraph [ref=e24]: Java Backend Engineer
+        - paragraph [ref=e25]: AI Application Developer
+        - paragraph [ref=e26]: 辽宁科技大学 · 软件工程 · 大三
+      - generic [ref=e28]:
+        - link "GitHub" [ref=e29] [cursor=pointer]:
+          - /url: https://github.com/EvanYao826
+          - img
+          - text: GitHub
+        - link "CSDN" [ref=e30] [cursor=pointer]:
+          - /url: https://blog.csdn.net/2503_93374004?type=blog
+          - img
+          - text: CSDN
+        - link "Email" [ref=e31] [cursor=pointer]:
+          - /url: mailto:2869018789@qq.com
+          - img
+          - text: Email
+        - link "Website" [ref=e32] [cursor=pointer]:
+          - /url: https://evanyao826324.vercel.app
+          - img
+          - text: Website
+    - generic [ref=e33]:
+      - heading "Highlights" [level=2] [ref=e34]
+      - generic [ref=e35]:
+        - generic [ref=e36]:
+          - generic [ref=e37]:
+            - img [ref=e39]
+            - generic [ref=e47]: Agent Architecture
+          - paragraph [ref=e49]: Designed five-layer Agent orchestration architecture, reducing SSE first-byte latency by ~90%
+        - generic [ref=e50]:
+          - generic [ref=e51]:
+            - img [ref=e53]
+            - generic [ref=e57]: Open Source
+          - paragraph [ref=e59]: Active contributor to Dify and LangChain4j open-source projects
+        - generic [ref=e60]:
+          - generic [ref=e61]:
+            - img [ref=e63]
+            - generic [ref=e65]: Technical Writing
+          - paragraph [ref=e67]: 100+ articles on CSDN with 100,000+ total views
+    - generic [ref=e69]:
+      - heading "Selected Projects" [level=2] [ref=e70]
+      - generic [ref=e71]:
+        - generic [ref=e72]:
+          - generic [ref=e73]:
+            - generic [ref=e74]: Agent Orchestration Architecture
+            - generic [ref=e75]: Designed a five-layer Agent orchestration architecture covering workflow scheduling, tool integration, memory management, context routing, and response streaming. Reduced SSE first-byte latency by nearly 90%.
+          - generic [ref=e77]:
+            - generic [ref=e78]: Java
+            - generic [ref=e79]: Agent
+            - generic [ref=e80]: SSE
+            - generic [ref=e81]: Architecture
+        - generic [ref=e82]:
+          - generic [ref=e83]:
+            - generic [ref=e84]: Online Education Platform
+            - generic [ref=e85]: A full-stack online education platform with course management, video streaming, and user authentication. Built with Java SpringBoot backend and React frontend.
+          - generic [ref=e87]:
+            - generic [ref=e88]: Java
+            - generic [ref=e89]: SpringBoot
+            - generic [ref=e90]: MySQL
+            - generic [ref=e91]: Redis
+            - generic [ref=e92]: React
+    - generic [ref=e93]:
+      - heading "Tech Stack" [level=2] [ref=e94]
+      - generic [ref=e95]:
+        - generic [ref=e96]:
+          - heading "Backend" [level=3] [ref=e97]
+          - generic [ref=e98]:
+            - generic [ref=e99]: Java
+            - generic [ref=e100]: SpringBoot
+            - generic [ref=e101]: Redis
+            - generic [ref=e102]: MySQL
+        - generic [ref=e103]:
+          - heading "AI / Agent" [level=3] [ref=e104]
+          - generic [ref=e105]:
+            - generic [ref=e106]: Python
+            - generic [ref=e107]: LangChain
+            - generic [ref=e108]: LangChain4j
+            - generic [ref=e109]: Dify
+        - generic [ref=e110]:
+          - heading "Frontend" [level=3] [ref=e111]
+          - generic [ref=e112]:
+            - generic [ref=e113]: React
+            - generic [ref=e114]: Next.js
+            - generic [ref=e115]: TypeScript
+        - generic [ref=e116]:
+          - heading "DevOps" [level=3] [ref=e117]
+          - generic [ref=e118]:
+            - generic [ref=e119]: Git
+            - generic [ref=e120]: Docker
+            - generic [ref=e121]: Linux
+  - contentinfo [ref=e122]:
+    - generic [ref=e123]:
+      - paragraph [ref=e124]:
+        - text: © 2026 Evan Yao. Built with
+        - img [ref=e125]
+        - text: using Next.js & Tailwind CSS.
+      - paragraph [ref=e127]: evanyao826324.vercel.app
+  - button "Open Next.js Dev Tools" [ref=e133] [cursor=pointer]:
+    - img [ref=e134]

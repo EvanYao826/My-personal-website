@@ -3,12 +3,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { MobileMenu } from "./MobileMenu";
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/projects", label: "Projects" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", label: "首页" },
+  { href: "/about", label: "关于" },
+  { href: "/projects", label: "项目" },
+  { href: "/contact", label: "联系" },
 ];
 
 export function Navbar() {
@@ -23,7 +24,8 @@ export function Navbar() {
         >
           Evan Yao
         </Link>
-        <ul className="flex items-center gap-1">
+
+        <ul className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link
@@ -40,6 +42,8 @@ export function Navbar() {
             </li>
           ))}
         </ul>
+
+        <MobileMenu links={navLinks} />
       </nav>
     </header>
   );

@@ -8,30 +8,30 @@ import { Server, Brain, BookOpen, Monitor } from "lucide-react";
 const whatIDo = [
   {
     icon: <Server className="h-5 w-5" />,
-    title: "Backend Architecture",
+    title: "后端架构",
     techs: "Java / SpringBoot / Redis / MySQL",
-    desc: "Building robust, scalable backend systems with clean architecture and best practices.",
+    desc: "构建稳健、可扩展的后端系统，遵循清晰架构和最佳实践。",
     accent: "card-accent-blue",
   },
   {
     icon: <Brain className="h-5 w-5" />,
-    title: "AI & Agent Systems",
+    title: "AI 与 Agent 系统",
     techs: "Python / LangChain / LangChain4j / Dify",
-    desc: "Designing multi-layer Agent orchestration architectures with focus on performance and streaming.",
+    desc: "设计多层 Agent 编排架构，专注于性能优化和流式传输。",
     accent: "card-accent-purple",
   },
   {
     icon: <BookOpen className="h-5 w-5" />,
-    title: "Open Source & Writing",
+    title: "开源与写作",
     techs: "Dify / LangChain4j / CSDN",
-    desc: "Contributing to open-source projects and sharing technical insights through 100+ blog articles.",
+    desc: "参与开源项目贡献，通过 100+ 篇博客文章分享技术见解。",
     accent: "card-accent-green",
   },
   {
     icon: <Monitor className="h-5 w-5" />,
-    title: "Frontend Development",
+    title: "前端开发",
     techs: "React / Next.js / TypeScript / Tailwind CSS",
-    desc: "Crafting modern, responsive user interfaces with a focus on developer experience.",
+    desc: "打造现代、响应式的用户界面，注重开发体验。",
     accent: "card-accent-blue",
   },
 ];
@@ -39,7 +39,7 @@ const whatIDo = [
 export default function About() {
   return (
     <div className="mx-auto max-w-4xl px-6 py-16">
-      {/* Header */}
+      {/* 头部信息 */}
       <section className="flex flex-col sm:flex-row items-start gap-8">
         <Avatar className="h-28 w-28 shrink-0 avatar-glow">
           <AvatarImage src={profile.avatar} alt={profile.nameEn} />
@@ -69,10 +69,10 @@ export default function About() {
 
       <div className="my-12 h-px bg-border/60" />
 
-      {/* What I Do */}
+      {/* 我在做什么 */}
       <section>
         <h2 className="text-2xl font-semibold tracking-tight mb-8 text-center">
-          What I Do
+          我在做什么
         </h2>
         <div className="grid gap-5 sm:grid-cols-2">
           {whatIDo.map((item) => (
@@ -101,10 +101,10 @@ export default function About() {
 
       <div className="my-12 h-px bg-border/60" />
 
-      {/* Skills */}
+      {/* 技能 */}
       <section>
         <h2 className="text-2xl font-semibold tracking-tight mb-8 text-center">
-          Skills
+          技能
         </h2>
         <div className="grid gap-8 sm:grid-cols-2">
           {skillCategories.map((cat) => (
@@ -128,15 +128,14 @@ export default function About() {
 
       <div className="my-12 h-px bg-border/60" />
 
-      {/* Goals */}
+      {/* 目标 */}
       <section>
         <h2 className="text-2xl font-semibold tracking-tight mb-6 text-center">
-          Goals
+          目标
         </h2>
         <div className="bg-muted/40 rounded-xl p-8 text-center">
           <blockquote className="text-muted-foreground italic text-lg leading-relaxed">
-            &ldquo;Becoming an AI full-stack engineer and independent developer
-            who builds practical products with elegant, maintainable code.&rdquo;
+            &ldquo;成为一名 AI 全栈工程师和独立开发者，致力于用优雅、可维护的代码构建实用的产品。&rdquo;
           </blockquote>
         </div>
       </section>

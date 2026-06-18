@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 const contactItems = [
   {
     icon: <Mail className="h-5 w-5" />,
-    label: "Email",
+    label: "邮箱",
     value: profile.social.email,
     href: `mailto:${profile.social.email}`,
     accent: "card-accent-blue",
@@ -23,13 +23,13 @@ const contactItems = [
   {
     icon: <FileText className="h-5 w-5" />,
     label: "CSDN",
-    value: "100+ articles, 100k+ views",
+    value: "100+ 篇文章，10 万+ 阅读",
     href: profile.social.csdn,
     accent: "card-accent-green",
   },
   {
     icon: <Globe className="h-5 w-5" />,
-    label: "Website",
+    label: "个人网站",
     value: profile.domain,
     href: profile.social.website,
     accent: "card-accent-blue",
@@ -41,11 +41,10 @@ export default function Contact() {
     <div className="mx-auto max-w-4xl px-6 py-16">
       <div className="text-center mb-12">
         <h1 className="text-2xl font-bold tracking-tight mb-2">
-          Get in Touch
+          联系我
         </h1>
         <p className="text-muted-foreground">
-          Feel free to reach out for collaboration, opportunities, or just a
-          chat.
+          欢迎联系我，洽谈合作、交流机会或随便聊聊。
         </p>
       </div>
 
@@ -72,7 +71,7 @@ export default function Contact() {
                   "rounded-full hover:bg-primary hover:text-primary-foreground"
                 )}
               >
-                Visit →
+                访问 →
               </Link>
             </CardContent>
           </Card>
@@ -88,7 +87,7 @@ export default function Contact() {
           )}
         >
           <Mail className="mr-2 h-4 w-4" />
-          Send me an email
+          发送邮件
         </Link>
       </div>
     </div>

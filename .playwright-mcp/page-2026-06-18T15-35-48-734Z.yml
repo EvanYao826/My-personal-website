@@ -1,0 +1,31 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - link "Evan Yao" [ref=e4] [cursor=pointer]:
+        - /url: /
+      - list [ref=e5]:
+        - listitem [ref=e6]:
+          - link "首页" [ref=e7] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=e8]:
+          - link "关于" [ref=e9] [cursor=pointer]:
+            - /url: /about
+        - listitem [ref=e10]:
+          - link "项目" [ref=e11] [cursor=pointer]:
+            - /url: /projects
+        - listitem [ref=e12]:
+          - link "联系" [ref=e13] [cursor=pointer]:
+            - /url: /contact
+  - main [ref=e14]:
+    - generic [ref=e17]:
+      - img [ref=e18]
+      - paragraph [ref=e20]: 加载中...
+  - contentinfo [ref=e21]:
+    - generic [ref=e22]:
+      - paragraph [ref=e23]:
+        - text: © 2026 Evan Yao · 使用
+        - img [ref=e24]
+        - text: 和 Next.js & Tailwind CSS 构建
+      - paragraph [ref=e26]: evanyao826324.vercel.app
+  - button "Open Next.js Dev Tools" [ref=e32] [cursor=pointer]:
+    - img [ref=e33]
