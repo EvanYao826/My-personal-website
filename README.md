@@ -2,7 +2,7 @@
 
 Digital business card + tech portfolio showcasing projects, skills, and background.
 
-**Live:** [evanyao826324.888.moe](https://evanyao826324.888.moe)
+**Live:** [evanyao826324.vercel.app](https://evanyao826324.vercel.app)
 
 ## Tech Stack
 

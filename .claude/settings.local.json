@@ -11,7 +11,8 @@
       "Bash(rm -rf node_modules)",
       "Bash(npm install *)",
       "Bash(npx shadcn@latest add button card badge separator avatar --yes)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(gh repo *)"
     ]
   }
 }

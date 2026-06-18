@@ -20,7 +20,10 @@ export function SocialLinks({ links }: SocialLinksProps) {
           href={links.github}
           target="_blank"
           rel="noopener noreferrer"
-          className={cn(buttonVariants({ variant: "outline", size: "sm" }))}
+          className={cn(
+            buttonVariants({ variant: "outline", size: "sm" }),
+            "rounded-full hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"
+          )}
         >
           <GitFork className="mr-1.5 h-4 w-4" />
           GitHub
@@ -31,7 +34,10 @@ export function SocialLinks({ links }: SocialLinksProps) {
           href={links.csdn}
           target="_blank"
           rel="noopener noreferrer"
-          className={cn(buttonVariants({ variant: "outline", size: "sm" }))}
+          className={cn(
+            buttonVariants({ variant: "outline", size: "sm" }),
+            "rounded-full hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"
+          )}
         >
           <FileText className="mr-1.5 h-4 w-4" />
           CSDN
@@ -40,7 +46,10 @@ export function SocialLinks({ links }: SocialLinksProps) {
       {links.email && (
         <Link
           href={`mailto:${links.email}`}
-          className={cn(buttonVariants({ variant: "outline", size: "sm" }))}
+          className={cn(
+            buttonVariants({ variant: "outline", size: "sm" }),
+            "rounded-full hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"
+          )}
         >
           <Mail className="mr-1.5 h-4 w-4" />
           Email
@@ -51,7 +60,10 @@ export function SocialLinks({ links }: SocialLinksProps) {
           href={links.website}
           target="_blank"
           rel="noopener noreferrer"
-          className={cn(buttonVariants({ variant: "outline", size: "sm" }))}
+          className={cn(
+            buttonVariants({ variant: "outline", size: "sm" }),
+            "rounded-full hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"
+          )}
         >
           <Globe className="mr-1.5 h-4 w-4" />
           Website

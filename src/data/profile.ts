@@ -7,7 +7,7 @@ export const profile = {
   major: "软件工程",
   grade: "大三",
   avatar: "/avatar.jpg",
-  domain: "evanyao826324.888.moe",
+  domain: "evanyao826324.vercel.app",
   bio: `My primary programming language is Java, and my long-term interests lie in backend architecture, AI applications, and Agent systems. Recently, I designed a five-layer Agent orchestration architecture covering workflow scheduling, tool integration, memory management, context routing, and response streaming, reducing SSE first-byte latency by nearly 90%.
 
 I'm working toward becoming an AI full-stack engineer and independent developer who builds practical products with elegant, maintainable code. Beyond engineering, I enjoy contributing to open-source communities and sharing technical insights through writing.`,
@@ -35,6 +35,6 @@ I'm working toward becoming an AI full-stack engineer and independent developer 
     github: "https://github.com/EvanYao826",
     csdn: "https://blog.csdn.net/2503_93374004?type=blog",
     email: "2869018789@qq.com",
-    website: "https://evanyao826324.888.moe",
+    website: "https://evanyao826324.vercel.app",
   },
 };

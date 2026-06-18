@@ -15,21 +15,24 @@ export function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md">
-      <nav className="mx-auto flex h-14 max-w-4xl items-center justify-between px-6">
-        <Link href="/" className="text-sm font-semibold tracking-tight">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/70 backdrop-blur-xl">
+      <nav className="mx-auto flex h-16 max-w-4xl items-center justify-between px-6">
+        <Link
+          href="/"
+          className="text-base font-semibold tracking-tight hover:text-primary transition-colors"
+        >
           Evan Yao
         </Link>
-        <ul className="flex items-center gap-6">
+        <ul className="flex items-center gap-1">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link
                 href={link.href}
                 className={cn(
-                  "text-sm transition-colors hover:text-foreground",
+                  "px-3 py-1.5 rounded-md text-sm transition-all",
                   pathname === link.href
-                    ? "text-foreground font-medium"
-                    : "text-muted-foreground"
+                    ? "text-primary bg-primary/10 font-medium"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
                 )}
               >
                 {link.label}
