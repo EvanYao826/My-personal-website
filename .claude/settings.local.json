@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm -v)",
+      "Bash(cmd *)",
+      "Bash(powershell *)",
+      "Read(//e/VSproject/**)",
+      "Bash(cp -r evan-portfolio-temp/. Evan-Portfolio/)",
+      "Bash(rm -rf evan-portfolio-temp)",
+      "Bash(npx shadcn@latest init -d)",
+      "Bash(rm -rf node_modules)",
+      "Bash(npm install *)",
+      "Bash(npx shadcn@latest add button card badge separator avatar --yes)",
+      "Bash(npm run *)"
+    ]
+  }
+}
