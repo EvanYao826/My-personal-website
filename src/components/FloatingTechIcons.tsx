@@ -136,28 +136,34 @@ export function FloatingTechIcons() {
         ))}
       </div>
 
-      {/* 小屏幕（手机）- 向上发散展开，错落分布 */}
+      {/* 小屏幕（手机）- 围绕头像发散展开 */}
       <div className="md:hidden">
-        {/* 手机端图标布局 - 在头像上方错落发散 */}
+        {/* 手机端图标布局 - 围绕头像上方和两侧发散 */}
         {[
-          { name: "Java", src: "/skills/icons8-java-96.png", left: "8%", top: "15%", size: 30 },
-          { name: "Python", src: "/skills/icons8-python-96.png", left: "22%", top: "8%", size: 28 },
-          { name: "Spring", src: "/skills/spring-icon-256px.png", left: "38%", top: "5%", size: 32 },
-          { name: "Redis", src: "/skills/redis.png", left: "55%", top: "10%", size: 26 },
-          { name: "Git", src: "/skills/icons8-git-96.png", left: "70%", top: "6%", size: 28 },
-          { name: "Linux", src: "/skills/icons8-linux-52.png", left: "85%", top: "18%", size: 24 },
-          { name: "React", src: "/skills/react.png", left: "15%", top: "28%", size: 26 },
-          { name: "Vue", src: "/skills/icons8-vuejs-96.png", left: "78%", top: "30%", size: 28 },
-        ].map((icon) => (
+          // 上方区域
+          { name: "Java", src: "/skills/icons8-java-96.png", left: "12%", top: "20%", size: 28 },
+          { name: "Python", src: "/skills/icons8-python-96.png", left: "28%", top: "15%", size: 26 },
+          { name: "Spring", src: "/skills/spring-icon-256px.png", left: "45%", top: "12%", size: 30 },
+          { name: "Redis", src: "/skills/redis.png", left: "62%", top: "16%", size: 24 },
+          { name: "Git", src: "/skills/icons8-git-96.png", left: "78%", top: "18%", size: 26 },
+          // 头像两侧
+          { name: "React", src: "/skills/react.png", left: "10%", top: "38%", size: 28 },
+          { name: "Vue", src: "/skills/icons8-vuejs-96.png", left: "82%", top: "40%", size: 26 },
+          { name: "TypeScript", src: "/skills/ts.png", left: "12%", top: "50%", size: 24 },
+          { name: "Linux", src: "/skills/icons8-linux-52.png", left: "80%", top: "52%", size: 24 },
+          { name: "MySQL", src: "/skills/mysql.png", left: "8%", top: "62%", size: 24 },
+          { name: "Docker", src: "/skills/docker.png", left: "85%", top: "65%", size: 28 },
+        ].map((icon, index) => (
           <div
             key={icon.name}
-            className="absolute transition-all duration-1000 ease-out pointer-events-auto animate-float"
+            className="absolute transition-all duration-1000 ease-out pointer-events-auto"
             style={{
               left: icon.left,
               top: icon.top,
+              animationDelay: `${index * 0.1}s`,
             }}
           >
-            <div className="group relative">
+            <div className="group relative animate-float">
               <Image
                 src={icon.src}
                 alt={icon.name}
