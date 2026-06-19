@@ -24,7 +24,7 @@ export function FutureSection() {
           </h2>
 
           {/* CTA */}
-          <p className="text-base sm:text-lg text-muted-foreground italic">
+          <p className="text-base sm:text-lg text-muted-foreground italic sm:whitespace-nowrap">
             {future.cta}
           </p>
         </div>
