@@ -157,8 +157,17 @@ export default function Contact() {
       <div className="h-px bg-border/60 w-full max-w-3xl my-4" />
 
       {/* Footer */}
-      <p className="text-xs text-muted-foreground/50">
-        感谢访问。
+      <p className="text-sm text-muted-foreground/70 mb-6">
+        项目地址：
+        <Link
+          href="https://github.com/EvanYao826/My-personal-website"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary/70 hover:text-primary transition-colors underline underline-offset-2"
+        >
+          EvanYao
+        </Link>
+        ，感谢访问 ❤️
       </p>
     </div>
   );
