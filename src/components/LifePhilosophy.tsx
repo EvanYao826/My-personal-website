@@ -36,7 +36,7 @@ export function LifePhilosophy() {
 
       <div className="space-y-6">
         {/* Row 1: 2 cards */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-[780px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[780px] mx-auto">
           {thoughts.slice(0, 2).map((item, index) => (
             <ScrollReveal key={item.title} delay={index * 100}>
               <MagneticCard intensity={0.1}>
@@ -59,7 +59,7 @@ export function LifePhilosophy() {
         </div>
 
         {/* Row 2: 3 cards, wider container so each card is same width */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {thoughts.slice(2).map((item, index) => (
             <ScrollReveal key={item.title} delay={(index + 2) * 100}>
               <MagneticCard intensity={0.1}>

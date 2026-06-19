@@ -10,7 +10,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 
 export default function About() {
   return (
-    <div className="mx-auto max-w-7xl px-12 py-12">
+    <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12 py-8 sm:py-12">
       {/* Hero */}
       <AboutHero />
 

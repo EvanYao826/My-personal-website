@@ -19,7 +19,7 @@ export function TimelineStory() {
         {/* Timeline line */}
         <div className="absolute left-[17px] top-2 bottom-2 w-px bg-gradient-to-b from-primary/60 via-primary/30 to-transparent" />
 
-        <div className="space-y-10">
+        <div className="space-y-6 sm:space-y-10">
           {timeline.map((item, index) => (
             <ScrollReveal key={item.year} delay={index * 100}>
               <div className="relative flex gap-6">
@@ -35,7 +35,7 @@ export function TimelineStory() {
 
                 {/* Card */}
                 <Card className="flex-1 relative glass-card card-hover-lift">
-                  <CardContent className="p-6">
+                  <CardContent className="p-4 sm:p-6">
                     <h3 className="font-semibold text-foreground text-lg mb-1">
                       {item.title}
                     </h3>
@@ -53,7 +53,7 @@ export function TimelineStory() {
                         {item.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="text-xs px-3 py-1 rounded-full bg-primary/5 text-primary/80 border border-primary/10"
+                            className="text-xs px-2.5 py-1 rounded-full bg-primary/5 text-primary/80 border border-primary/10"
                           >
                             {tag}
                           </span>

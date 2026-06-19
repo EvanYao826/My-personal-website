@@ -38,7 +38,7 @@ export function BentoGrid() {
         </h2>
       </ScrollReveal>
 
-      <div className="grid grid-cols-3 gap-4 max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
         {bentoItems.map((item, index) => {
           const style = bentoStyles[index];
           return (
@@ -76,7 +76,7 @@ export function BentoGrid() {
                       </h3>
                     </div>
                     <div className={cn(
-                      index === 1 ? "grid grid-cols-3 gap-2.5" : "space-y-3"
+                      index === 1 ? "grid grid-cols-1 sm:grid-cols-3 gap-2.5" : "space-y-3"
                     )}>
                       {item.items.map((subItem) => (
                         <div
