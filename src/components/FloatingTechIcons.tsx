@@ -115,9 +115,51 @@ function FloatingIcon({ icon }: { icon: TechIcon }) {
 export function FloatingTechIcons() {
   return (
     <>
+      {/* 大屏幕显示所有图标 */}
       <div className="hidden lg:block">
         {iconsLayout.map((icon) => (
           <FloatingIcon key={icon.name} icon={icon} />
+        ))}
+      </div>
+
+      {/* 中等屏幕（平板）显示部分图标 */}
+      <div className="hidden md:block lg:hidden">
+        {iconsLayout.filter((_, index) => index % 2 === 0).map((icon) => (
+          <FloatingIcon 
+            key={icon.name} 
+            icon={{ ...icon, size: icon.size * 0.7 }} 
+          />
+        ))}
+      </div>
+
+      {/* 小屏幕（手机）- 两侧悬浮布局，尺寸更小 */}
+      <div className="md:block lg:hidden">
+        {iconsLayout.slice(0, 8).map((icon) => (
+          <div
+            className="absolute transition-all duration-1000 ease-out"
+            style={{
+              [icon.side]: `${icon.side === 'left' ? Math.min(icon.sidePos * 0.6, 15) : Math.max(100 - icon.sidePos * 0.6, 85)}%`,
+              top: `${icon.top}%`,
+            }}
+          >
+            <div className="group relative">
+              <Image
+                src={icon.src}
+                alt={icon.name}
+                width={28}
+                height={28}
+                className="transition-transform duration-300 group-hover:scale-110"
+                style={{
+                  filter: "brightness(1.1) drop-shadow(0 0 4px rgba(59, 130, 246, 0.4))",
+                }}
+              />
+              <div className="absolute left-1/2 -translate-x-1/2 -bottom-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50">
+                <span className="text-xs text-foreground whitespace-nowrap bg-background/95 px-1.5 py-0.5 rounded-md shadow-lg border border-border/50">
+                  {icon.name}
+                </span>
+              </div>
+            </div>
+          </div>
         ))}
       </div>
 
