@@ -1,23 +1,28 @@
 export interface SkillCategory {
   category: string;
+  icon: string;
   skills: string[];
 }
 
 export const skillCategories: SkillCategory[] = [
   {
     category: "Backend",
-    skills: ["Java", "SpringBoot", "Redis", "MySQL"],
+    icon: "⚙️",
+    skills: ["Java", "SpringBoot", "Redis", "MySQL", "RabbitMQ", "MongoDB"],
   },
   {
     category: "AI / Agent",
-    skills: ["Python", "LangChain", "LangChain4j", "Dify"],
+    icon: "🤖",
+    skills: ["Python", "LangChain", "LangChain4j", "FastAPI", "RAG", "Agent"],
   },
   {
     category: "Frontend",
-    skills: ["React", "Next.js", "TypeScript"],
+    icon: "🎨",
+    skills: ["React", "Next.js", "TypeScript", "Tailwind", "Vue"],
   },
   {
     category: "DevOps",
-    skills: ["Git", "Docker", "Linux"],
+    icon: "🚀",
+    skills: ["Git", "Docker", "Linux", "Nginx", "CI/CD"],
   },
 ];

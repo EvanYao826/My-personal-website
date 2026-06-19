@@ -14,14 +14,13 @@ const navLinks = [
 
 export function Navbar({ fixed = false }: { fixed?: boolean }) {
   const pathname = usePathname();
-  const isHome = pathname === "/";
 
   return (
     <header
       className={cn(
         fixed ? "fixed" : "sticky",
         "top-0 z-50 w-full",
-        isHome
+        fixed
           ? "bg-transparent"
           : "border-b border-border/40 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60"
       )}
@@ -41,9 +40,10 @@ export function Navbar({ fixed = false }: { fixed?: boolean }) {
               <Link
                 href={link.href}
                 className={cn(
-                  "relative px-4 py-2 rounded-lg text-base font-medium",
+                  "group relative px-4 py-2 rounded-lg text-base font-medium",
                   "transition-all duration-300 ease-out",
-                  isHome
+                  "hover:scale-105",
+                  fixed
                     ? pathname === link.href
                       ? "text-primary bg-white/20"
                       : "text-foreground/80 hover:text-foreground hover:bg-white/10"
@@ -52,7 +52,17 @@ export function Navbar({ fixed = false }: { fixed?: boolean }) {
                       : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                 )}
               >
-                {link.label}
+                <span className="relative z-10">{link.label}</span>
+                {/* Hover underline effect */}
+                <span
+                  className={cn(
+                    "absolute bottom-1 left-4 right-4 h-0.5 rounded-full",
+                    "bg-gradient-to-r from-transparent via-primary/50 to-transparent",
+                    "opacity-0 scale-x-50",
+                    "transition-all duration-300 ease-out",
+                    "group-hover:opacity-100 group-hover:scale-x-100"
+                  )}
+                />
                 {/* Active indicator */}
                 {pathname === link.href && (
                   <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary animate-pulse-soft" />

@@ -25,8 +25,8 @@ export function LayoutContent({ children }: { children: ReactNode }) {
   return (
     <>
       <InteractiveBackground />
-      <Navbar />
-      <main className="relative z-10">
+      <Navbar fixed />
+      <main className="relative z-10 pt-16">
         <PageTransition>{children}</PageTransition>
       </main>
       <Footer />

@@ -16,20 +16,11 @@ export function Footer() {
             &copy; {new Date().getFullYear()} {profile.nameEn}
           </span>
           <span className="text-muted-foreground/50">·</span>
-          <span className="flex items-center gap-1">
-            使用
-            <Heart className="h-3.5 w-3.5 text-red-400 fill-red-400 animate-pulse-soft" />
-            和 Next.js + Tailwind CSS 构建
-          </span>
+          <Heart className="h-3.5 w-3.5 text-red-400 fill-red-400 animate-pulse-soft" />
         </p>
 
         <p className="mt-3 text-xs text-muted-foreground/60 hover:text-muted-foreground transition-colors duration-300">
           {profile.domain}
-        </p>
-
-        {/* Back to top hint */}
-        <p className="mt-4 text-xs text-muted-foreground/40">
-          点击右下角按钮返回顶部
         </p>
       </div>
     </footer>
