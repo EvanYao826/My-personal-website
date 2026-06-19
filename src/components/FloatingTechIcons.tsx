@@ -136,48 +136,47 @@ export function FloatingTechIcons() {
         ))}
       </div>
 
-      {/* 小屏幕（手机）- 向上发散展开（上半圆） */}
-      <div className="md:hidden absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="relative" style={{ width: radius * 2 + 40, height: radius + 60 }}>
-          {mobileIcons.map((icon, index) => {
-            // 8个图标在上半圆范围内发散（180度范围，从左上到右上）
-            // 角度范围：180度（左）到 0度（右），只在上半部分
-            const angle = (180 - index * 22.5) * (Math.PI / 180);
-            const x = Math.cos(angle) * radius;
-            const y = Math.sin(angle) * radius; // y为负值（向上）
-            
-            return (
-              <div
-                key={icon.name}
-                className="absolute transition-all duration-1000 ease-out pointer-events-auto"
+      {/* 小屏幕（手机）- 向上发散展开，错落分布 */}
+      <div className="md:hidden">
+        {/* 手机端图标布局 - 在头像上方错落发散 */}
+        {[
+          { name: "Java", src: "/skills/icons8-java-96.png", left: "8%", top: "15%", size: 30 },
+          { name: "Python", src: "/skills/icons8-python-96.png", left: "22%", top: "8%", size: 28 },
+          { name: "Spring", src: "/skills/spring-icon-256px.png", left: "38%", top: "5%", size: 32 },
+          { name: "Redis", src: "/skills/redis.png", left: "55%", top: "10%", size: 26 },
+          { name: "Git", src: "/skills/icons8-git-96.png", left: "70%", top: "6%", size: 28 },
+          { name: "Linux", src: "/skills/icons8-linux-52.png", left: "85%", top: "18%", size: 24 },
+          { name: "React", src: "/skills/react.png", left: "15%", top: "28%", size: 26 },
+          { name: "Vue", src: "/skills/icons8-vuejs-96.png", left: "78%", top: "30%", size: 28 },
+        ].map((icon) => (
+          <div
+            key={icon.name}
+            className="absolute transition-all duration-1000 ease-out pointer-events-auto animate-float"
+            style={{
+              left: icon.left,
+              top: icon.top,
+            }}
+          >
+            <div className="group relative">
+              <Image
+                src={icon.src}
+                alt={icon.name}
+                width={icon.size}
+                height={icon.size}
+                className="transition-transform duration-300 group-hover:scale-120"
                 style={{
-                  left: '50%',
-                  bottom: '0',
-                  transform: `translate(calc(-50% + ${x}px), ${-radius + y}px)`,
+                  filter: "brightness(1.1) drop-shadow(0 0 6px rgba(59, 130, 246, 0.5))",
                 }}
-              >
-                <div className="group relative animate-float">
-                  <Image
-                    src={icon.src}
-                    alt={icon.name}
-                    width={32}
-                    height={32}
-                    className="transition-transform duration-300 group-hover:scale-120"
-                    style={{
-                      filter: "brightness(1.1) drop-shadow(0 0 6px rgba(59, 130, 246, 0.5))",
-                    }}
-                  />
-                  {/* Tooltip - 显示在图标上方 */}
-                  <div className="absolute left-1/2 -translate-x-1/2 -top-7 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50 whitespace-nowrap">
-                    <span className="text-xs text-foreground bg-background/95 px-2 py-1 rounded-md shadow-lg border border-border/50">
-                      {icon.name}
-                    </span>
-                  </div>
-                </div>
+              />
+              {/* Tooltip */}
+              <div className="absolute left-1/2 -translate-x-1/2 -top-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50 whitespace-nowrap">
+                <span className="text-xs text-foreground bg-background/95 px-2 py-1 rounded-md shadow-lg border border-border/50">
+                  {icon.name}
+                </span>
               </div>
-            );
-          })}
-        </div>
+            </div>
+          </div>
+        ))}
       </div>
 
       <style jsx global>{`
