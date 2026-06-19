@@ -113,6 +113,10 @@ function FloatingIcon({ icon }: { icon: TechIcon }) {
 }
 
 export function FloatingTechIcons() {
+  // 手机端放射状布局的图标数据 - 8个图标均匀分布在圆周上
+  const mobileIcons = iconsLayout.slice(0, 8);
+  const radius = 100; // 放射半径（像素）
+  
   return (
     <>
       {/* 大屏幕显示所有图标 */}
@@ -132,35 +136,51 @@ export function FloatingTechIcons() {
         ))}
       </div>
 
-      {/* 小屏幕（手机）- 两侧悬浮布局，尺寸更小 */}
-      <div className="md:block lg:hidden">
-        {iconsLayout.slice(0, 8).map((icon) => (
-          <div
-            className="absolute transition-all duration-1000 ease-out"
-            style={{
-              [icon.side]: `${icon.side === 'left' ? Math.min(icon.sidePos * 0.6, 15) : Math.max(100 - icon.sidePos * 0.6, 85)}%`,
-              top: `${icon.top}%`,
-            }}
-          >
-            <div className="group relative">
-              <Image
-                src={icon.src}
-                alt={icon.name}
-                width={28}
-                height={28}
-                className="transition-transform duration-300 group-hover:scale-110"
+      {/* 小屏幕（手机）- 围绕头像放射状展开 */}
+      <div className="md:hidden absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="relative" style={{ width: radius * 2 + 40, height: radius * 2 + 40 }}>
+          {mobileIcons.map((icon, index) => {
+            // 8个图标均匀分布，从顶部开始，顺时针排列
+            const angle = (index * 45 - 90) * (Math.PI / 180); // 从顶部(-90度)开始
+            const x = Math.cos(angle) * radius;
+            const y = Math.sin(angle) * radius;
+            
+            return (
+              <div
+                key={icon.name}
+                className="absolute transition-all duration-1000 ease-out pointer-events-auto"
                 style={{
-                  filter: "brightness(1.1) drop-shadow(0 0 4px rgba(59, 130, 246, 0.4))",
+                  left: '50%',
+                  top: '50%',
+                  transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
                 }}
-              />
-              <div className="absolute left-1/2 -translate-x-1/2 -bottom-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50">
-                <span className="text-xs text-foreground whitespace-nowrap bg-background/95 px-1.5 py-0.5 rounded-md shadow-lg border border-border/50">
-                  {icon.name}
-                </span>
+              >
+                <div className="group relative animate-float">
+                  <Image
+                    src={icon.src}
+                    alt={icon.name}
+                    width={32}
+                    height={32}
+                    className="transition-transform duration-300 group-hover:scale-120"
+                    style={{
+                      filter: "brightness(1.1) drop-shadow(0 0 6px rgba(59, 130, 246, 0.5))",
+                    }}
+                  />
+                  {/* Tooltip */}
+                  <div className="absolute left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50 whitespace-nowrap"
+                    style={{ 
+                      top: y > 0 ? 'auto' : '-24px',
+                      bottom: y > 0 ? '-24px' : 'auto',
+                    }}>
+                    <span className="text-xs text-foreground bg-background/95 px-2 py-1 rounded-md shadow-lg border border-border/50">
+                      {icon.name}
+                    </span>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        ))}
+            );
+          })}
+        </div>
       </div>
 
       <style jsx global>{`
