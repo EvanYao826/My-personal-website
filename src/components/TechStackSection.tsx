@@ -26,7 +26,7 @@ export function TechStackSection() {
     <section>
       <ScrollReveal>
         <h2 className="text-2xl font-semibold tracking-tight mb-8 text-center">
-          技术栈
+          🛠️ 技术栈
         </h2>
       </ScrollReveal>
 

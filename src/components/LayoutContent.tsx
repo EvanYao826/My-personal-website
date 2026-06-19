@@ -22,6 +22,8 @@ export function LayoutContent({ children }: { children: ReactNode }) {
     );
   }
 
+  const isContact = pathname === "/contact";
+
   return (
     <>
       <InteractiveBackground />
@@ -29,8 +31,8 @@ export function LayoutContent({ children }: { children: ReactNode }) {
       <main className="relative z-10 pt-16">
         <PageTransition>{children}</PageTransition>
       </main>
-      <Footer />
-      <BackToTop />
+      {!isContact && <Footer />}
+      {!isContact && <BackToTop />}
     </>
   );
 }

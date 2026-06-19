@@ -30,7 +30,7 @@ export function LifePhilosophy() {
     <section>
       <ScrollReveal>
         <h2 className="text-2xl font-semibold tracking-tight mb-8 text-center">
-          编程之外
+          💭 编程之外
         </h2>
       </ScrollReveal>
 

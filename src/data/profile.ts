@@ -18,6 +18,15 @@ export const profile = {
     website: "https://evanyao826324.vercel.app",
   },
 
+  location: "辽宁 · 中国",
+  resumeUrl: "/resume.pdf",
+  currentStatus: [
+    "🎓 辽宁科技大学 软件工程",
+    "💻 Java 后端 & AI 应用开发",
+    "📚 正在学习系统设计",
+    "🚀 正在寻找实习机会",
+  ],
+
   // Timeline Story
   timeline: [
     {
