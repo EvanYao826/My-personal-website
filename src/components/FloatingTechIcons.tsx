@@ -136,14 +136,15 @@ export function FloatingTechIcons() {
         ))}
       </div>
 
-      {/* 小屏幕（手机）- 围绕头像放射状展开 */}
+      {/* 小屏幕（手机）- 向上发散展开（上半圆） */}
       <div className="md:hidden absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="relative" style={{ width: radius * 2 + 40, height: radius * 2 + 40 }}>
+        <div className="relative" style={{ width: radius * 2 + 40, height: radius + 60 }}>
           {mobileIcons.map((icon, index) => {
-            // 8个图标均匀分布，从顶部开始，顺时针排列
-            const angle = (index * 45 - 90) * (Math.PI / 180); // 从顶部(-90度)开始
+            // 8个图标在上半圆范围内发散（180度范围，从左上到右上）
+            // 角度范围：180度（左）到 0度（右），只在上半部分
+            const angle = (180 - index * 22.5) * (Math.PI / 180);
             const x = Math.cos(angle) * radius;
-            const y = Math.sin(angle) * radius;
+            const y = Math.sin(angle) * radius; // y为负值（向上）
             
             return (
               <div
@@ -151,8 +152,8 @@ export function FloatingTechIcons() {
                 className="absolute transition-all duration-1000 ease-out pointer-events-auto"
                 style={{
                   left: '50%',
-                  top: '50%',
-                  transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
+                  bottom: '0',
+                  transform: `translate(calc(-50% + ${x}px), ${-radius + y}px)`,
                 }}
               >
                 <div className="group relative animate-float">
@@ -166,12 +167,8 @@ export function FloatingTechIcons() {
                       filter: "brightness(1.1) drop-shadow(0 0 6px rgba(59, 130, 246, 0.5))",
                     }}
                   />
-                  {/* Tooltip */}
-                  <div className="absolute left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50 whitespace-nowrap"
-                    style={{ 
-                      top: y > 0 ? 'auto' : '-24px',
-                      bottom: y > 0 ? '-24px' : 'auto',
-                    }}>
+                  {/* Tooltip - 显示在图标上方 */}
+                  <div className="absolute left-1/2 -translate-x-1/2 -top-7 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50 whitespace-nowrap">
                     <span className="text-xs text-foreground bg-background/95 px-2 py-1 rounded-md shadow-lg border border-border/50">
                       {icon.name}
                     </span>
