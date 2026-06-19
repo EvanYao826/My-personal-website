@@ -1,16 +1,36 @@
+"use client";
+
 import { profile } from "@/data/profile";
-import { Heart } from "lucide-react";
+import { Heart, Sparkles } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border/40 bg-muted/30">
-      <div className="mx-auto max-w-4xl px-6 py-8 text-center text-sm text-muted-foreground">
-        <p className="flex items-center justify-center gap-1.5">
-          &copy; {new Date().getFullYear()} {profile.nameEn} · 使用{" "}
-          <Heart className="h-3.5 w-3.5 text-red-400 fill-red-400" /> 和
-          Next.js &amp; Tailwind CSS 构建
+    <footer className="relative border-t border-border/40 bg-background/80 backdrop-blur-sm overflow-hidden">
+      {/* Decorative gradient */}
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-50" />
+
+      <div className="relative mx-auto max-w-4xl px-6 py-10 text-center">
+        <p className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+          <Sparkles className="h-4 w-4 text-primary animate-pulse-soft" />
+          <span>
+            &copy; {new Date().getFullYear()} {profile.nameEn}
+          </span>
+          <span className="text-muted-foreground/50">·</span>
+          <span className="flex items-center gap-1">
+            使用
+            <Heart className="h-3.5 w-3.5 text-red-400 fill-red-400 animate-pulse-soft" />
+            和 Next.js + Tailwind CSS 构建
+          </span>
         </p>
-        <p className="mt-2 text-xs opacity-60">{profile.domain}</p>
+
+        <p className="mt-3 text-xs text-muted-foreground/60 hover:text-muted-foreground transition-colors duration-300">
+          {profile.domain}
+        </p>
+
+        {/* Back to top hint */}
+        <p className="mt-4 text-xs text-muted-foreground/40">
+          点击右下角按钮返回顶部
+        </p>
       </div>
     </footer>
   );

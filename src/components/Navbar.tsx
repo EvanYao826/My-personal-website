@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { MobileMenu } from "./MobileMenu";
+import { Sparkles } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "首页" },
@@ -16,13 +17,14 @@ export function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/70 backdrop-blur-xl">
-      <nav className="mx-auto flex h-16 max-w-4xl items-center justify-between px-6">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
+      <nav className="flex h-16 items-center justify-between px-6 md:px-10">
         <Link
           href="/"
-          className="text-base font-semibold tracking-tight hover:text-primary transition-colors"
+          className="group flex items-center gap-2 name-artistic text-2xl hover:opacity-80 transition-all duration-300"
         >
-          Evan Yao
+          <Sparkles className="h-5 w-5 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse-soft" />
+          EvanYao
         </Link>
 
         <ul className="hidden md:flex items-center gap-1">
@@ -31,13 +33,18 @@ export function Navbar() {
               <Link
                 href={link.href}
                 className={cn(
-                  "px-3 py-1.5 rounded-md text-sm transition-all",
+                  "relative px-4 py-2 rounded-lg text-base font-medium",
+                  "transition-all duration-300 ease-out",
                   pathname === link.href
-                    ? "text-primary bg-primary/10 font-medium"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                    ? "text-primary bg-primary/10"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                 )}
               >
                 {link.label}
+                {/* Active indicator */}
+                {pathname === link.href && (
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary animate-pulse-soft" />
+                )}
               </Link>
             </li>
           ))}
