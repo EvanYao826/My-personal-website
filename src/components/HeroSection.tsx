@@ -3,6 +3,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { SocialLinks } from "@/components/SocialLinks";
 import { FloatingTechIcons } from "./FloatingTechIcons";
+import { SuccessMessages } from "./SuccessMessages";
 import { profile } from "@/data/profile";
 import { Sparkles } from "lucide-react";
 
@@ -16,6 +17,9 @@ export function HeroSection() {
 
       {/* Dots pattern overlay */}
       <div className="absolute inset-0 dots-pattern opacity-50" />
+
+      {/* Success messages floating */}
+      <SuccessMessages />
 
       {/* Floating tech icons */}
       <FloatingTechIcons />
