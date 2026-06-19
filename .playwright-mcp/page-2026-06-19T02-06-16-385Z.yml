@@ -1,0 +1,46 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e6]:
+      - link "View source on GitHub":
+        - /url: https://github.com/SimonAKing/HomePage
+        - img [ref=e7]
+      - heading "SimonAKing" [level=2] [ref=e11]
+      - heading "Front back left right end engineer" [level=3] [ref=e12]
+      - generic [ref=e13]: PRESS START
+    - img [ref=e15]
+  - generic [ref=e19]:
+    - generic [ref=e20]:
+      - img "avatar" [ref=e21]
+      - heading "SimonAKing" [level=1] [ref=e22]
+      - heading "STDIN | Think >> /dev/Mind" [level=2] [ref=e23]
+    - list [ref=e24]:
+      - listitem [ref=e25]:
+        - link "Blog" [ref=e26]:
+          - /url: blog/
+          - generic [ref=e27]: 
+          - text: Blog
+      - listitem [ref=e28]:
+        - link "Thoughts" [ref=e29]:
+          - /url: /blog/weibo/
+          - generic [ref=e30]: 
+          - text: Thoughts
+      - listitem [ref=e31]:
+        - link "About" [ref=e32]:
+          - /url: about/
+          - generic [ref=e33]: 
+          - text: About
+      - listitem [ref=e34]:
+        - link "Gallery" [ref=e35]:
+          - /url: gallery/
+          - generic [ref=e36]: 
+          - text: Gallery
+      - listitem [ref=e37]:
+        - link "Projects" [ref=e38]:
+          - /url: projects/
+          - generic [ref=e39]: 
+          - text: Projects
+      - listitem [ref=e40]:
+        - link "Thinking" [ref=e41]:
+          - /url: https://thinking.simonaking.com/
+          - generic [ref=e42]: 
+          - text: Thinking

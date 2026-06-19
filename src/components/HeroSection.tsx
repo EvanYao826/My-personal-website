@@ -2,12 +2,13 @@
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { SocialLinks } from "@/components/SocialLinks";
+import { FloatingTechIcons } from "./FloatingTechIcons";
 import { profile } from "@/data/profile";
-import { Sparkles, MapPin, GraduationCap } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section className="hero-gradient relative">
+    <section className="hero-gradient relative h-screen flex items-center justify-center overflow-hidden">
       {/* Floating decorative orbs */}
       <div className="floating-orb w-32 h-32 bg-primary/30 top-20 left-10" />
       <div className="floating-orb w-24 h-24 bg-purple-500/30 top-40 right-20 animation-delay-200" />
@@ -16,7 +17,10 @@ export function HeroSection() {
       {/* Dots pattern overlay */}
       <div className="absolute inset-0 dots-pattern opacity-50" />
 
-      <div className="relative flex flex-col items-center text-center py-28 px-6">
+      {/* Floating tech icons */}
+      <FloatingTechIcons />
+
+      <div className="relative flex flex-col items-center text-center py-16 px-6">
         {/* Avatar with enhanced animation */}
         <div className="animate-fade-in-up animate-float">
           <div className="relative">
@@ -36,40 +40,11 @@ export function HeroSection() {
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-gradient-animate">
             {profile.name}
           </h1>
-          <p className="mt-3 text-xl text-muted-foreground font-light tracking-wide">
-            {profile.nameEn}
-          </p>
-        </div>
-
-        {/* Title and info with icons */}
-        <div className="animate-fade-in-up animation-delay-200 mt-8 flex flex-col items-center gap-2">
-          <p className="text-lg text-primary font-medium">{profile.title}</p>
-          <p className="text-lg text-muted-foreground">{profile.subtitle}</p>
-
-          {/* Education info with icon */}
-          <div className="mt-3 flex items-center gap-2 text-sm text-muted-foreground/80">
-            <GraduationCap className="h-4 w-4" />
-            <span>{profile.university}</span>
-            <span className="text-muted-foreground/50">·</span>
-            <span>{profile.major}</span>
-            <span className="text-muted-foreground/50">·</span>
-            <span>{profile.grade}</span>
-          </div>
         </div>
 
         {/* Social links */}
         <div className="animate-fade-in-up animation-delay-300 mt-10">
           <SocialLinks links={profile.social} />
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 animate-fade-in-up animation-delay-500">
-          <div className="flex flex-col items-center gap-2 text-muted-foreground/60">
-            <span className="text-xs">向下滚动探索</span>
-            <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex justify-center pt-2">
-              <div className="w-1.5 h-3 rounded-full bg-muted-foreground/50 animate-bounce" />
-            </div>
-          </div>
         </div>
       </div>
     </section>

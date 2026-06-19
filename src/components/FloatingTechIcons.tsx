@@ -1,0 +1,136 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Image from "next/image";
+
+interface TechIcon {
+  name: string;
+  src: string;
+  size: number;
+  isSvg?: boolean;
+  top: number;
+  side: "left" | "right";
+  sidePos: number;
+  delay: number;
+  floatDuration: number;
+}
+
+// 技术栈图标布局 - 错落分布，靠近中间，放大尺寸
+const iconsLayout: TechIcon[] = [
+  // 左侧图标 (6个) - 错落排列，靠近中间
+  { name: "Java", src: "/skills/icons8-java-96.png", size: 76, top: 12, side: "left", sidePos: 22, delay: 0.1, floatDuration: 5 },
+  { name: "Python", src: "/skills/icons8-python-96.png", size: 68, top: 28, side: "left", sidePos: 28, delay: 0.2, floatDuration: 4.5 },
+  { name: "Spring", src: "/skills/spring-icon-256px.png", size: 72, top: 45, side: "left", sidePos: 20, delay: 0.3, floatDuration: 5.5 },
+  { name: "Redis", src: "/skills/redis.png", size: 64, top: 62, side: "left", sidePos: 26, delay: 0.4, floatDuration: 4.8 },
+  { name: "Git", src: "/skills/icons8-git-96.png", size: 70, top: 78, side: "left", sidePos: 24, delay: 0.5, floatDuration: 5.2 },
+  { name: "Linux", src: "/skills/icons8-linux-52.png", size: 62, top: 20, side: "left", sidePos: 34, delay: 0.6, floatDuration: 4.6 },
+  
+  // 右侧图标 (6个) - 错落排列
+  { name: "React", src: "/skills/react.png", size: 74, top: 15, side: "right", sidePos: 20, delay: 0.15, floatDuration: 4.7 },
+  { name: "Vue", src: "/skills/icons8-vuejs-96.png", size: 64, top: 32, side: "right", sidePos: 32, delay: 0.25, floatDuration: 5.1 },
+  { name: "TypeScript", src: "/skills/ts.png", size: 70, top: 50, side: "right", sidePos: 18, delay: 0.35, floatDuration: 4.9 },
+  { name: "Next.js", src: "/skills/icons8-next-48.png", size: 66, top: 68, side: "right", sidePos: 24, delay: 0.45, floatDuration: 5.4 },
+  { name: "MySQL", src: "/skills/mysql.png", size: 68, top: 78, side: "right", sidePos: 16, delay: 0.55, floatDuration: 5.3 },
+  { name: "Docker", src: "/skills/docker.png", size: 78, top: 58, side: "right", sidePos: 34, delay: 0.65, floatDuration: 4.8 },
+];
+
+function FloatingIcon({ icon }: { icon: TechIcon }) {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), icon.delay * 500 + 500);
+    return () => clearTimeout(timer);
+  }, [icon.delay]);
+
+  return (
+    <div
+      className="absolute transition-all duration-1000 ease-out"
+      style={{
+        [icon.side]: `${icon.sidePos}%`,
+        top: `${icon.top}%`,
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? "translateY(0) scale(1)" : "translateY(30px) scale(0.8)",
+      }}
+    >
+      <div
+        className="group relative"
+        style={{
+          animation: isVisible
+            ? `float-custom ${icon.floatDuration}s ease-in-out ${icon.delay}s infinite`
+            : "none",
+        }}
+      >
+        {/* Glow effect on hover */}
+        <div
+          className="absolute inset-0 rounded-full blur-2xl opacity-0 group-hover:opacity-60 transition-opacity duration-500"
+          style={{
+            background: "radial-gradient(circle, rgba(129, 140, 248, 0.8), rgba(192, 132, 252, 0.4))",
+            transform: "scale(3)",
+          }}
+        />
+
+        {/* Icon */}
+        <div className="relative">
+          {icon.isSvg ? (
+            <div
+              style={{ width: icon.size, height: icon.size }}
+              className="transition-transform duration-300 group-hover:scale-125"
+            >
+              <img
+                src={icon.src}
+                alt={icon.name}
+                width={icon.size}
+                height={icon.size}
+                className="w-full h-full"
+                style={{
+                  filter: "brightness(1.4) drop-shadow(0 0 8px rgba(129, 140, 248, 0.5))",
+                }}
+              />
+            </div>
+          ) : (
+            <Image
+              src={icon.src}
+              alt={icon.name}
+              width={icon.size}
+              height={icon.size}
+              className="transition-transform duration-300 group-hover:scale-125"
+              style={{
+                filter: "brightness(1.2) drop-shadow(0 0 8px rgba(129, 140, 248, 0.4))",
+              }}
+            />
+          )}
+        </div>
+
+        {/* Tooltip */}
+        <div className="absolute left-1/2 -translate-x-1/2 -bottom-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50">
+          <span className="text-xs text-foreground whitespace-nowrap bg-background/90 px-2 py-1 rounded-md shadow-lg border border-border/50">
+            {icon.name}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function FloatingTechIcons() {
+  return (
+    <>
+      <div className="hidden lg:block">
+        {iconsLayout.map((icon) => (
+          <FloatingIcon key={icon.name} icon={icon} />
+        ))}
+      </div>
+
+      <style jsx global>{`
+        @keyframes float-custom {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-16px);
+          }
+        }
+      `}</style>
+    </>
+  );
+}

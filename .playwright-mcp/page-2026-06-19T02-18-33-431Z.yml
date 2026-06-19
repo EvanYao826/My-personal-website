@@ -1,0 +1,174 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - link "EvanYao" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e5]
+        - text: EvanYao
+      - list [ref=e8]:
+        - listitem [ref=e9]:
+          - link "首页" [ref=e10] [cursor=pointer]:
+            - /url: /
+            - text: 首页
+        - listitem [ref=e12]:
+          - link "关于" [ref=e13] [cursor=pointer]:
+            - /url: /about
+        - listitem [ref=e14]:
+          - link "项目" [ref=e15] [cursor=pointer]:
+            - /url: /projects
+        - listitem [ref=e16]:
+          - link "联系" [ref=e17] [cursor=pointer]:
+            - /url: /contact
+  - main [ref=e18]:
+    - generic [ref=e48]:
+      - generic [ref=e54]:
+        - generic [ref=e56]:
+          - img "Evan Yao" [ref=e58]
+          - img [ref=e59]
+        - heading "姚昆鹏" [level=1] [ref=e63]
+        - generic [ref=e64]:
+          - paragraph [ref=e65]: Java 后端工程师
+          - paragraph [ref=e66]: AI 应用开发者
+          - generic [ref=e67]:
+            - img [ref=e68]
+            - generic [ref=e71]: 辽宁科技大学
+            - generic [ref=e72]: ·
+            - generic [ref=e73]: 软件工程
+            - generic [ref=e74]: ·
+            - generic [ref=e75]: 大三
+        - generic [ref=e77]:
+          - link "GitHub" [ref=e78] [cursor=pointer]:
+            - /url: https://github.com/EvanYao826
+            - img
+            - text: GitHub
+          - link "CSDN" [ref=e79] [cursor=pointer]:
+            - /url: https://blog.csdn.net/2503_93374004?type=blog
+            - img
+            - text: CSDN
+          - link "Email" [ref=e80] [cursor=pointer]:
+            - /url: mailto:2869018789@qq.com
+            - img
+            - text: Email
+          - link "Website" [ref=e81] [cursor=pointer]:
+            - /url: https://evanyao826324.vercel.app
+            - img
+            - text: Website
+        - generic [ref=e84]: 向下滚动探索
+      - generic [ref=e89]:
+        - heading "亮点" [level=2] [ref=e91]:
+          - img [ref=e92]
+          - text: 亮点
+        - generic [ref=e95]:
+          - generic [ref=e98]:
+            - generic [ref=e100]:
+              - img [ref=e102]
+              - generic [ref=e110]: Agent 架构
+            - paragraph [ref=e112]: 设计五层 Agent 编排架构，将 SSE 首字节延迟降低约 90%
+          - generic [ref=e115]:
+            - generic [ref=e117]:
+              - img [ref=e119]
+              - generic [ref=e123]: 开源贡献
+            - paragraph [ref=e125]: Dify 和 LangChain4j 开源项目的活跃贡献者
+          - generic [ref=e128]:
+            - generic [ref=e130]:
+              - img [ref=e132]
+              - generic [ref=e134]: 技术写作
+            - paragraph [ref=e136]: 在 CSDN 发表 100+ 篇文章，总阅读量超过 10 万
+      - generic [ref=e138]:
+        - heading "精选项目" [level=2] [ref=e140]
+        - generic [ref=e141]:
+          - generic [ref=e144]:
+            - generic [ref=e146]:
+              - generic [ref=e147]: Agent 编排架构
+              - generic [ref=e148]: 设计五层 Agent 编排架构，涵盖工作流调度、工具集成、记忆管理、上下文路由和响应流式传输。将 SSE 首字节延迟降低了近 90%。
+            - generic [ref=e150]:
+              - generic [ref=e151]: Java
+              - generic [ref=e152]: Agent
+              - generic [ref=e153]: SSE
+              - generic [ref=e154]: 架构
+          - generic [ref=e157]:
+            - generic [ref=e159]:
+              - generic [ref=e160]: 在线教育平台
+              - generic [ref=e161]: 全栈在线教育平台，包含课程管理、视频流媒体和用户认证功能。采用 Java SpringBoot 后端和 React 前端。
+            - generic [ref=e163]:
+              - generic [ref=e164]: Java
+              - generic [ref=e165]: SpringBoot
+              - generic [ref=e166]: MySQL
+              - generic [ref=e167]: Redis
+              - generic [ref=e168]: React
+      - generic [ref=e171]:
+        - heading "技术栈" [level=2] [ref=e173]
+        - generic [ref=e174]:
+          - generic [ref=e177]:
+            - heading "Backend" [level=3] [ref=e178]: Backend
+            - generic [ref=e180]:
+              - generic [ref=e181]:
+                - img [ref=e182]
+                - generic [ref=e185]: Java
+              - generic [ref=e186]:
+                - img [ref=e187]
+                - generic [ref=e190]: SpringBoot
+              - generic [ref=e191]:
+                - img [ref=e192]
+                - generic [ref=e196]: Redis
+              - generic [ref=e197]:
+                - img [ref=e198]
+                - generic [ref=e202]: MySQL
+          - generic [ref=e205]:
+            - heading "AI / Agent" [level=3] [ref=e206]: AI / Agent
+            - generic [ref=e208]:
+              - generic [ref=e209]:
+                - img [ref=e210]
+                - generic [ref=e215]: Python
+              - generic [ref=e216]:
+                - img [ref=e217]
+                - generic [ref=e220]: LangChain
+              - generic [ref=e221]:
+                - img [ref=e222]
+                - generic [ref=e225]: LangChain4j
+              - generic [ref=e226]:
+                - img [ref=e227]
+                - generic [ref=e230]: Dify
+          - generic [ref=e233]:
+            - heading "Frontend" [level=3] [ref=e234]: Frontend
+            - generic [ref=e236]:
+              - generic [ref=e237]:
+                - img [ref=e238]
+                - generic [ref=e241]: React
+              - generic [ref=e242]:
+                - img [ref=e243]
+                - generic [ref=e246]: Next.js
+              - generic [ref=e247]:
+                - img [ref=e248]
+                - generic [ref=e251]: TypeScript
+          - generic [ref=e254]:
+            - heading "DevOps" [level=3] [ref=e255]: DevOps
+            - generic [ref=e257]:
+              - generic [ref=e258]:
+                - img [ref=e259]
+                - generic [ref=e263]: Git
+              - generic [ref=e264]:
+                - img [ref=e265]
+                - generic [ref=e267]: Docker
+              - generic [ref=e268]:
+                - img [ref=e269]
+                - generic [ref=e271]: Linux
+  - contentinfo [ref=e25]:
+    - generic [ref=e27]:
+      - paragraph [ref=e28]:
+        - img [ref=e29]
+        - generic [ref=e32]: © 2026 Evan Yao
+        - generic [ref=e33]: ·
+        - generic [ref=e34]:
+          - text: 使用
+          - img [ref=e35]
+          - text: 和 Next.js + Tailwind CSS 构建
+      - paragraph [ref=e37]: evanyao826324.vercel.app
+      - paragraph [ref=e38]: 点击右下角按钮返回顶部
+  - button "Open Next.js Dev Tools" [ref=e44] [cursor=pointer]:
+    - img [ref=e45]
+  - alert [ref=e272]
+  - button "返回顶部" [ref=e273]:
+    - img [ref=e274]
+    - img [ref=e276]
+    - img [ref=e278]

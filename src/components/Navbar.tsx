@@ -9,15 +9,23 @@ import { Sparkles } from "lucide-react";
 const navLinks = [
   { href: "/", label: "首页" },
   { href: "/about", label: "关于" },
-  { href: "/projects", label: "项目" },
   { href: "/contact", label: "联系" },
 ];
 
-export function Navbar() {
+export function Navbar({ fixed = false }: { fixed?: boolean }) {
   const pathname = usePathname();
+  const isHome = pathname === "/";
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
+    <header
+      className={cn(
+        fixed ? "fixed" : "sticky",
+        "top-0 z-50 w-full",
+        isHome
+          ? "bg-transparent"
+          : "border-b border-border/40 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60"
+      )}
+    >
       <nav className="flex h-16 items-center justify-between px-6 md:px-10">
         <Link
           href="/"
@@ -35,9 +43,13 @@ export function Navbar() {
                 className={cn(
                   "relative px-4 py-2 rounded-lg text-base font-medium",
                   "transition-all duration-300 ease-out",
-                  pathname === link.href
-                    ? "text-primary bg-primary/10"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                  isHome
+                    ? pathname === link.href
+                      ? "text-primary bg-white/20"
+                      : "text-foreground/80 hover:text-foreground hover:bg-white/10"
+                    : pathname === link.href
+                      ? "text-primary bg-primary/10"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                 )}
               >
                 {link.label}

@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { PageTransition } from "@/components/PageTransition";
-import { BackToTop } from "@/components/BackToTop";
+import { LayoutContent } from "@/components/LayoutContent";
 import { profile } from "@/data/profile";
 import "./globals.css";
 
@@ -18,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: `${profile.nameEn} — ${profile.title}`,
+  title: "EvanYao",
   description: profile.bio.split("\n")[0],
 };
 
@@ -33,12 +30,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Navbar />
-        <main className="flex-1">
-          <PageTransition>{children}</PageTransition>
-        </main>
-        <Footer />
-        <BackToTop />
+        <LayoutContent>{children}</LayoutContent>
       </body>
     </html>
   );

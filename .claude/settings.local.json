@@ -12,7 +12,13 @@
       "Bash(npm install *)",
       "Bash(npx shadcn@latest add button card badge separator avatar --yes)",
       "Bash(npm run *)",
-      "Bash(gh repo *)"
+      "Bash(gh repo *)",
+      "mcp__fetch__fetch_markdown",
+      "Bash(curl -s \"https://api.github.com/repos/SimonAKing/HomePage/contents/src\")",
+      "Bash(curl -s \"https://api.github.com/repos/SimonAKing/HomePage/contents/src/js\")",
+      "Bash(python3 -c \"import sys,json; [print\\(f['name'], f['download_url']\\) for f in json.load\\(sys.stdin\\)]\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/SimonAKing/HomePage/master/src/js/background.js\")",
+      "Bash(curl *)"
     ]
   }
 }
