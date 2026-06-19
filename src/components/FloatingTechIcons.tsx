@@ -141,18 +141,18 @@ export function FloatingTechIcons() {
         {/* 手机端图标布局 - 围绕头像上方和两侧发散 */}
         {[
           // 上方区域
-          { name: "Java", src: "/skills/icons8-java-96.png", left: "12%", top: "20%", size: 28 },
-          { name: "Python", src: "/skills/icons8-python-96.png", left: "28%", top: "15%", size: 26 },
-          { name: "Spring", src: "/skills/spring-icon-256px.png", left: "45%", top: "12%", size: 30 },
-          { name: "Redis", src: "/skills/redis.png", left: "62%", top: "16%", size: 24 },
-          { name: "Git", src: "/skills/icons8-git-96.png", left: "78%", top: "18%", size: 26 },
+          { name: "Java", src: "/skills/icons8-java-96.png", left: "12%", top: "20%", size: 40 },
+          { name: "Python", src: "/skills/icons8-python-96.png", left: "28%", top: "15%", size: 38 },
+          { name: "Spring", src: "/skills/spring-icon-256px.png", left: "45%", top: "12%", size: 42 },
+          { name: "Redis", src: "/skills/redis.png", left: "62%", top: "16%", size: 36 },
+          { name: "Git", src: "/skills/icons8-git-96.png", left: "78%", top: "18%", size: 38 },
           // 头像两侧
-          { name: "React", src: "/skills/react.png", left: "10%", top: "38%", size: 28 },
-          { name: "Vue", src: "/skills/icons8-vuejs-96.png", left: "82%", top: "40%", size: 26 },
-          { name: "TypeScript", src: "/skills/ts.png", left: "12%", top: "50%", size: 24 },
-          { name: "Linux", src: "/skills/icons8-linux-52.png", left: "80%", top: "52%", size: 24 },
-          { name: "MySQL", src: "/skills/mysql.png", left: "8%", top: "62%", size: 24 },
-          { name: "Docker", src: "/skills/docker.png", left: "85%", top: "65%", size: 28 },
+          { name: "React", src: "/skills/react.png", left: "10%", top: "38%", size: 34 },
+          { name: "Vue", src: "/skills/icons8-vuejs-96.png", left: "82%", top: "40%", size: 32 },
+          { name: "TypeScript", src: "/skills/ts.png", left: "12%", top: "50%", size: 30 },
+          { name: "Linux", src: "/skills/icons8-linux-52.png", left: "80%", top: "52%", size: 30 },
+          { name: "MySQL", src: "/skills/mysql.png", left: "8%", top: "62%", size: 30 },
+          { name: "Docker", src: "/skills/docker.png", left: "85%", top: "65%", size: 34 },
         ].map((icon, index) => (
           <div
             key={icon.name}
