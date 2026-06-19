@@ -401,17 +401,18 @@ html {
   animation: float 6s ease-in-out infinite;
 }
 
-/* Text gradient animation - 清新蓝色渐变 */
+/* Text gradient animation - 清新自然风格，与背景和谐搭配 */
 .text-gradient-animate {
-  background: linear-gradient(90deg, #4361ee, #06b6d4, #4361ee);
-  background-size: 200% auto;
+  background: linear-gradient(90deg, #3b82f6, #10b981, #06b6d4, #3b82f6);
+  background-size: 300% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: gradient-shift 3s ease infinite;
-  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  animation: gradient-shift 4s ease infinite;
+  font-family: "Comic Neue", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-shadow: 0 2px 10px rgba(59, 130, 246, 0.2);
 }
 
 /* Scroll reveal animation class */
