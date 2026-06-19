@@ -23,13 +23,7 @@ const bentoStyles = [
     gradient: "from-emerald-500/8 to-emerald-500/[0.02]",
     hoverGradient: "from-emerald-500/15 to-emerald-500/5",
     dot: "bg-emerald-500",
-    span: "col-span-2",
-  },
-  {
-    gradient: "from-amber-500/8 to-amber-500/[0.02]",
-    hoverGradient: "from-amber-500/15 to-amber-500/5",
-    dot: "bg-amber-500",
-    span: "col-span-2",
+    span: "",
   },
 ];
 
@@ -44,7 +38,7 @@ export function BentoGrid() {
         </h2>
       </ScrollReveal>
 
-      <div className="grid grid-cols-2 gap-4 max-w-3xl mx-auto">
+      <div className="grid grid-cols-3 gap-4 max-w-4xl mx-auto">
         {bentoItems.map((item, index) => {
           const style = bentoStyles[index];
           return (

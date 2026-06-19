@@ -36,30 +36,29 @@ export function TimelineStory() {
                 {/* Card */}
                 <Card className="flex-1 relative glass-card card-hover-lift">
                   <CardContent className="p-6">
-                    <h3 className="font-semibold text-foreground mb-3 text-lg">
+                    <h3 className="font-semibold text-foreground text-lg mb-1">
                       {item.title}
                     </h3>
+                    {item.subtitle && (
+                      <p className="text-sm text-primary/80 mb-4">
+                        {item.subtitle}
+                      </p>
+                    )}
                     <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                      {item.description}
+                      {item.content}
                     </p>
 
-                    {item.items && item.items.length > 0 && (
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {item.items.map((listItem) => (
+                    {item.tags && item.tags.length > 0 && (
+                      <div className="flex flex-wrap gap-2 pt-2 border-t border-border/40">
+                        {item.tags.map((tag) => (
                           <span
-                            key={listItem}
+                            key={tag}
                             className="text-xs px-3 py-1 rounded-full bg-primary/5 text-primary/80 border border-primary/10"
                           >
-                            {listItem}
+                            {tag}
                           </span>
                         ))}
                       </div>
-                    )}
-
-                    {item.highlight && (
-                      <blockquote className="text-sm text-muted-foreground/80 italic border-l-2 border-primary/40 pl-3 py-1">
-                        {item.highlight}
-                      </blockquote>
                     )}
                   </CardContent>
                 </Card>

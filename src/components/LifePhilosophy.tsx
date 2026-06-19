@@ -4,10 +4,27 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MagneticCard } from "@/components/interactive";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { profile } from "@/data/profile";
-import { cn } from "@/lib/utils";
+
+const cardGradients = [
+  "from-green-500/[0.07] to-transparent",
+  "from-blue-500/[0.07] to-transparent",
+  "from-purple-500/[0.07] to-transparent",
+  "from-orange-500/[0.07] to-transparent",
+  "from-red-500/[0.07] to-transparent",
+];
+
+function renderContent(text: string) {
+  const parts = text.split(/(\*\*.*?\*\*)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return <strong key={i} className="font-semibold text-foreground">{part.slice(2, -2)}</strong>;
+    }
+    return <span key={i}>{part}</span>;
+  });
+}
 
 export function LifePhilosophy() {
-  const { life, quote } = profile;
+  const { thoughts } = profile;
 
   return (
     <section>
@@ -17,84 +34,52 @@ export function LifePhilosophy() {
         </h2>
       </ScrollReveal>
 
-      {/* Three columns: Sports, Reading, Quote */}
-      <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-        {/* Sports */}
-        <ScrollReveal delay={0}>
-          <MagneticCard intensity={0.1}>
-            <Card className="glass-card card-hover-lift h-full border-border/60">
-              <CardHeader className="pb-3">
-                <CardTitle className="text-base flex items-center gap-2">
-                  <span>⚽</span> 运动
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {life.sports.map((sport) => (
-                    <span
-                      key={sport}
-                      className="text-sm px-3 py-1.5 rounded-full bg-muted/50 text-muted-foreground hover:bg-primary/10 hover:text-primary transition-colors"
-                    >
-                      {sport}
-                    </span>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </MagneticCard>
-        </ScrollReveal>
+      <div className="space-y-6">
+        {/* Row 1: 2 cards */}
+        <div className="grid md:grid-cols-2 gap-6 max-w-[780px] mx-auto">
+          {thoughts.slice(0, 2).map((item, index) => (
+            <ScrollReveal key={item.title} delay={index * 100}>
+              <MagneticCard intensity={0.1}>
+                <Card className="glass-card card-hover-lift h-full border-border/60 relative overflow-hidden">
+                  <div className={`absolute inset-0 bg-gradient-to-br ${cardGradients[index]} pointer-events-none`} />
+                  <CardHeader className="relative pb-2">
+                    <CardTitle className="text-base flex items-center gap-2">
+                      <span>{item.icon}</span> {item.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="relative">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {renderContent(item.content)}
+                    </p>
+                  </CardContent>
+                </Card>
+              </MagneticCard>
+            </ScrollReveal>
+          ))}
+        </div>
 
-        {/* Reading */}
-        <ScrollReveal delay={100}>
-          <MagneticCard intensity={0.1}>
-            <Card className="glass-card card-hover-lift h-full border-border/60">
-              <CardHeader className="pb-3">
-                <CardTitle className="text-base flex items-center gap-2">
-                  <span>📖</span> 阅读
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-col gap-2">
-                  {life.reading.map((book) => (
-                    <span
-                      key={book}
-                      className="text-sm px-3 py-1.5 rounded-lg bg-muted/50 text-muted-foreground hover:bg-primary/10 hover:text-primary transition-colors"
-                    >
-                      {book}
-                    </span>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </MagneticCard>
-        </ScrollReveal>
-
-        {/* Quote */}
-        <ScrollReveal delay={200}>
-          <MagneticCard intensity={0.1}>
-            <Card className="glass-card card-hover-lift h-full border-border/60 bg-gradient-to-br from-primary/5 to-transparent">
-              <CardHeader className="pb-3">
-                <CardTitle className="text-base flex items-center gap-2">
-                  <span>💭</span> 思考
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <blockquote className="relative">
-                  {/* Quote marks */}
-                  <div className="text-4xl text-primary/20 font-serif leading-none mb-2">
-                    &ldquo;
-                  </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed italic whitespace-pre-line">
-                    {quote}
-                  </p>
-                  <div className="text-4xl text-primary/20 font-serif leading-none mt-2 text-right">
-                    &rdquo;
-                  </div>
-                </blockquote>
-              </CardContent>
-            </Card>
-          </MagneticCard>
-        </ScrollReveal>
+        {/* Row 2: 3 cards, wider container so each card is same width */}
+        <div className="grid md:grid-cols-3 gap-6">
+          {thoughts.slice(2).map((item, index) => (
+            <ScrollReveal key={item.title} delay={(index + 2) * 100}>
+              <MagneticCard intensity={0.1}>
+                <Card className="glass-card card-hover-lift h-full border-border/60 relative overflow-hidden">
+                  <div className={`absolute inset-0 bg-gradient-to-br ${cardGradients[index + 2]} pointer-events-none`} />
+                  <CardHeader className="relative pb-2">
+                    <CardTitle className="text-base flex items-center gap-2">
+                      <span>{item.icon}</span> {item.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="relative">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {renderContent(item.content)}
+                    </p>
+                  </CardContent>
+                </Card>
+              </MagneticCard>
+            </ScrollReveal>
+          ))}
+        </div>
       </div>
     </section>
   );
